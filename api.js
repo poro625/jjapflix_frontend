@@ -1,5 +1,7 @@
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
+const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
+
 
 window.onload = () => {
     console.log('로딩되었음')
@@ -118,12 +120,14 @@ async function getMovie(){
 
 async function getMovieDetail(){
     const response = await fetch(`${backEndBaseUrl}/articles/1/`,{
+
         method:'GET',
     })
 
     response_json = await response.json()
     return response_json
 }
+
 
 
 async function handlePost() {
@@ -142,3 +146,4 @@ async function handlePost() {
         })
     })
 }
+
