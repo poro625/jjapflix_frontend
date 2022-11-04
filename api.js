@@ -131,9 +131,10 @@ async function handlePost() {
     const rating = document.getElementById("rating").value
     console.log(content, rating)
 
-    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/', {
+    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/comment.id', {
         headers: {
             'content-type': 'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access")
         },
         method: 'POST',
         body: JSON.stringify({
@@ -141,4 +142,29 @@ async function handlePost() {
             "rating": rating
         })
     })
+    response_json = await response.json()
+    return response_json
+}
+
+async function getMovieComment(){
+    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+}
+
+
+async function MovieCommentDelete() {
+
+    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/1/', {
+        headers: {
+            'content-type': 'application/json',
+            "Authorization":"Bearer " + localStorage.getItem("access")
+        },
+        method: 'DELETE',
+    })
+    response_json = await response.json()
+    return response_json
 }
