@@ -1,3 +1,6 @@
+const frontEndBaseUrl = "http://127.0.0.1:5500"
+const backEndBaseUrl = "http://127.0.0.1:8000"
+
 window.onload = () => {
     console.log('로딩되었음')
 }
@@ -22,7 +25,18 @@ async function handleSignup() {
         })
     })
 
+    const response_json = await response.json()
+    
     console.log(response)
+    if (response.status == 201){
+        alert(response_json["detail"])
+            window.location.replace(`${frontEndBaseUrl}/login.html`);
+    }else {
+        alert(response_json["email"])
+        alert(response_json["password1"])
+        alert(response_json["password2"])
+
+    }
 }
 
 async function handleLogin() {
@@ -41,5 +55,27 @@ async function handleLogin() {
         })
     })
 
-    console.log(response)
+    const response_json = await response.json()    // responser 값을 json 화
+
+    console.log(response_json)
+    if (response.status == 200){
+        localStorage.setItem("access", response_json.access);  // 로컬스토리지안에 access값 저장
+        localStorage.setItem("refresh", response_json.refresh); // 로컬스토리지안에 refresh값 저장
+
+        const base64Url = response_json.access.split('.')[1];  // 로컬스토리지에 JWT값 저장
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        localStorage.setItem("payload", jsonPayload);
+
+        alert("로그인 성공!")
+            window.location.replace(`${frontEndBaseUrl}/home.html`);
+
+    }else {
+        //로그인 실패시
+        alert(response_json["detail"])
+        window.location.reload();
+    }
 }
