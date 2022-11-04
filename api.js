@@ -104,3 +104,12 @@ async function handleDelete(){   //mock 함수
 
     console.log(response)
 }
+
+async function getMovie(){
+    const response = await fetch(`${backEndBaseUrl}/articles/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+}
