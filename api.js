@@ -113,3 +113,32 @@ async function getMovie(){
     response_json = await response.json()
     return response_json
 }
+
+
+
+async function getMovieDetail(){
+    const response = await fetch(`${backEndBaseUrl}/articles/1/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+}
+
+
+async function handlePost() {
+    const content = document.getElementById("content").value
+    const rating = document.getElementById("rating").value
+    console.log(content, rating)
+
+    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/', {
+        headers: {
+            'content-type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify({
+            "content": content,
+            "rating": rating
+        })
+    })
+}
