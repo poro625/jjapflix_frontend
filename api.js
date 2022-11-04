@@ -131,7 +131,7 @@ async function handlePost() {
     const rating = document.getElementById("rating").value
     console.log(content, rating)
 
-    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/comment.id', {
+    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/', {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")
@@ -142,29 +142,23 @@ async function handlePost() {
             "rating": rating
         })
     })
-    response_json = await response.json()
-    return response_json
-}
-
-async function getMovieComment(){
-    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/`,{
-        method:'GET',
-    })
-
-    response_json = await response.json()
-    return response_json
+    if (response.status ==200){
+        window.location.reload();
+    }
 }
 
 
-async function MovieCommentDelete() {
+async function MovieCommentDelete(comment) {
 
-    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/1/', {
+    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/${comment.id}/`, {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")
         },
         method: 'DELETE',
     })
-    response_json = await response.json()
-    return response_json
+    if (response.status ==204){
+        alert("리뷰가 삭제되었습니다!")
+        window.location.replace(`${frontEndBaseUrl}/articledetail.html`);
+    }
 }
