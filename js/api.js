@@ -1,8 +1,8 @@
-const frontEndBaseUrl = "http://127.0.0.1:5500"
+const frontEndBaseUrl = "http://127.0.0.1:5502"
 const backEndBaseUrl = "http://127.0.0.1:8000"
 const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 
-
+// 회원가입
 window.onload = () => {
     console.log('로딩되었음')
 }
@@ -32,7 +32,7 @@ async function handleSignup() {
     console.log(response)
     if (response.status == 201){
         alert(response_json["detail"])
-            window.location.replace(`${frontEndBaseUrl}/login.html`);
+            window.location.replace(`${frontEndBaseUrl}/home.html`);
     }else {
         alert(response_json["email"])
         alert(response_json["password1"])
@@ -41,6 +41,7 @@ async function handleSignup() {
     }
 }
 
+// 로그인
 async function handleLogin() {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
@@ -82,15 +83,16 @@ async function handleLogin() {
     }
 }
 
-
+// 로그아웃
 async function handleLogout(){
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
     alert("로그아웃 성공!")
-        window.location.replace(`${frontEndBaseUrl}/login.html`);
+        window.location.replace(`${frontEndBaseUrl}/index.html`);
 }
 
+// 회원탈퇴
 async function handleDelete(){   //mock 함수
     const response = await fetch('http://127.0.0.1:8000/users/delete/',{
         headers:{
@@ -146,4 +148,6 @@ async function handlePost() {
         })
     })
 }
+
+
 
