@@ -116,22 +116,22 @@ async function getMovie(){
 
 
 
-async function getMovieDetail(){
-    const response = await fetch(`${backEndBaseUrl}/articles/1/`,{
+async function getMovieDetail(movie_id){
+    const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
     })
-
+    //window.location.replace(`${frontEndBaseUrl}/articledetail.html/`);
     response_json = await response.json()
     return response_json
 }
 
 
-async function handlePost() {
+async function handlePost(movie_id) {
     const content = document.getElementById("content").value
     const rating = document.getElementById("rating").value
     console.log(content, rating)
 
-    const response = await fetch('http://127.0.0.1:8000/articles/1/comment/', {
+    const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/`, {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")
@@ -159,6 +159,6 @@ async function MovieCommentDelete(comment) {
     })
     if (response.status ==204){
         alert("리뷰가 삭제되었습니다!")
-        window.location.replace(`${frontEndBaseUrl}/articledetail.html`);
+        window.location.reload();
     }
 }
