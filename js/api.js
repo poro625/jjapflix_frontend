@@ -148,9 +148,9 @@ async function handlePost(movie_id) {
 }
 
 
-async function MovieCommentDelete(comment) {
+async function MovieCommentDelete(comment, movie_id) {
 
-    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/${comment.id}/`, {
+    const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/${comment.id}/`, {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")
