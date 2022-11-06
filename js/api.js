@@ -1,5 +1,6 @@
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
+
 window.onload = () => {
     console.log('로딩되었음')
 }
@@ -69,6 +70,7 @@ async function handleLogin() {
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
+
         alert("로그인 성공!")
             window.location.replace(`${frontEndBaseUrl}/home.html`);
 
@@ -78,6 +80,7 @@ async function handleLogin() {
         // window.location.reload();
     }
 }
+
 
 async function handleLogout(){
     localStorage.removeItem("access")
@@ -112,6 +115,7 @@ async function getMovie(){
     return response_json
 }
 
+
 async function getMovieDetail(movie_id){
     const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
@@ -120,6 +124,7 @@ async function getMovieDetail(movie_id){
     response_json = await response.json()
     return response_json
 }
+
 
 async function handlePost(movie_id) {
     const content = document.getElementById("content").value
@@ -141,6 +146,7 @@ async function handlePost(movie_id) {
         window.location.reload();
     }
 }
+
 
 async function MovieCommentDelete(comment) {
 

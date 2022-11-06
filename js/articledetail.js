@@ -29,7 +29,6 @@ window.onload = async function loadArticle(){
 
     articles.movie_comment.forEach(comment => {
 
-
         const newContent = document.createElement("div");
         const newRating = document.createElement("div");
         const newButton = document.createElement("button");
