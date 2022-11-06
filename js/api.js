@@ -1,4 +1,3 @@
-const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
 window.onload = () => {
