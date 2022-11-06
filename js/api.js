@@ -26,7 +26,7 @@ async function handleSignup() {
     })
 
     const response_json = await response.json()
-    
+
     console.log(response)
     if (response.status == 201){
         alert(response_json["detail"])
@@ -43,6 +43,7 @@ async function handleLogin() {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     console.log(email, password)
+
 
     const response = await fetch('http://127.0.0.1:8000/users/dj-rest-auth/login/', {
         headers: {
@@ -113,7 +114,6 @@ async function getMovie(){
     response_json = await response.json()
     return response_json
 }
-
 
 
 async function getMovieDetail(movie_id){
