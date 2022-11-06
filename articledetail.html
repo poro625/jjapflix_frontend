@@ -9,12 +9,14 @@
 <body>
     <h1>게시글상세보기 페이지</h1>
     <ol id="article"></ol>
+    <br>
+    <ol id ="comment"></ol>
     <form>
         <input type="text" name="content" id="content" placeholder="리뷰내용" />
         <input type="text" name="rating" id="rating" placeholder="평점" />
-        <button type="button" onclick="handlePost()">제출</button>
+        <button id="btn_submit" type="button">제출</button>
     </form>
-    <script src="api.js"></script>
-    <script src="articledetail.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/articledetail.js"></script>
 </body>
 </html>
