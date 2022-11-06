@@ -1,0 +1,346 @@
+:root {
+    --main-font:'Noto Sans KR', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: var(--main-font);
+    background-image: url('center3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 60rem;
+    background-position: center top;
+    background-color: black;
+   
+    
+}
+
+
+    
+header{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rowdies',cursive;
+    align-items: center;
+    font-weight: 700;
+    padding: 2rem;
+    transition: 0.2s all ease;
+    overflow: hidden;
+}
+
+body{
+    
+    background: rgb(255,69,0);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, transparent 0%, rgb(0, 0, 0) 90%);
+    overflow: scroll;
+}
+
+
+.jinsearch {
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+header .nav-logo {
+    font-size: 3rem;
+    color: red;
+    float:left;
+    cursor: pointer;
+}
+
+
+input:focus {
+    outline:none;
+}
+
+
+.nav-actions {
+    display: flex;   
+    font-family:var(--main-font)
+}
+
+.nav-actions a {
+    margin-right: 2rem;
+    font-size: 1.5rem;
+   
+}
+.action{
+    font-size: 1.5rem;
+    float:right;
+    margin-top: 0.6rem;
+    margin-left: 2rem;
+    display: flex;   
+    cursor: pointer;
+}
+.box input {
+    background: black;
+    color:white;
+    width: 18rem;
+}
+
+
+.sub img {
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+}
+
+
+.submaster-active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s all ease;
+}
+
+
+
+.submaster{
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    width: 180px;
+    opacity: 1;
+    visibility: visible;
+    list-style-type: none;
+    background-color: black;
+    color: white;
+    font-size: 1vw;
+}
+
+
+.sub {
+    width: 100%;
+    align-items: center;
+    padding: 0.5rem;
+    display: flex; 
+   
+}
+
+.submaster .sub img {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+
+}
+
+.test {
+    border : 2px solid white;
+    
+}
+
+#sub-menu >li {
+    padding: 8px 20px;
+    border-bottom: 2px solid blue;
+}
+
+
+.line {
+    border-bottom: 2px solid red;
+}
+
+#main-menu > li {
+    float: left;
+    
+}
+#main-menu > li > a {
+    display: block;
+   padding: 1rem 1rem;
+    text-align: center;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: white
+}
+
+
+
+
+.action button {
+    margin-right: 1rem;
+}
+
+
+.blog .tags {
+    width: 100%;
+    height: 100%;
+    margin-top: 48rem;
+    margin-left: 5.2rem;
+    
+}
+.tags .tag-btn1 {
+    padding: 1.2rem 3.5rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 4px;
+    color: black;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    transition: 0.2s all ease;
+}
+.tags .tag-btn2 {
+    padding: 1.2rem 3.9rem;
+    border: 1px solid #878787;
+    background-color: #878787;
+    border-radius: 4px;
+    color:white;
+    
+    font-weight: 700;
+    font-size: 2rem;
+    opacity: 0.85;
+    transition: 0.2s all ease;
+
+
+}
+.tags .tag-btn1:hover {
+    background-color:#919495 ;
+    border: 1px solid #919495 ;
+}
+.tags .tag-btn2:hover{
+    opacity: 0.6;
+}
+
+.mini {
+    margin-left: 1rem;
+}
+
+
+.picture {
+   
+    display: flex;
+    padding: 1rem 0 0 5rem;
+    
+}
+.item{
+    position: relative;
+    transition: transform 500ms;
+}
+
+.picture:focus-within  .item,
+.picture:hover .item {
+  transform: translateX(-25%);
+}
+.item:focus ~ .item,
+.item:hover ~ .item {
+  transform: translateX(25%);
+}
+
+.picture .item:focus,
+.picture .item:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+
+.item img {
+    display: block;
+    width: 23rem;
+    height: 13rem;
+  
+    margin-right: 0.5rem;
+  
+}
+
+.zzim p {
+    margin-top: 6vw;
+    font-size: 1.2vw;
+    color: white;
+    font-weight: 600;
+    margin-left: 5.2rem;
+
+}
+
+.replay p {
+    margin-top: 0.5vw;
+    font-size: 1.2vw;
+    color: white;
+    font-weight: 600;
+    margin-left: 5.2rem;
+
+}
+
+
+
+
+@media only screen and (max-width: 800px){
+    .blog .tags {
+        margin-left: 2rem;
+    }
+    .picture img {
+        width: 18rem;
+        height: 8rem;
+   
+    }
+    .zzim p {
+       
+        font-size: 1.5rem;
+        margin-left: 2rem;
+    
+    }
+    .picture {
+        padding: 0rem;
+    }
+
+    html{
+   
+        background-size: 100% 30rem;
+    }
+
+    header {
+        padding: 1rem 0 0 0;
+        width: 100%;
+        height: 3rem;
+    }
+
+    .blog .tags {
+        width: 100%;
+        height: 100%;
+        margin-top: 20rem;
+    
+   
+    }
+    .tags .tag-btn1 {
+        font-size: 1.2rem;
+        padding: 0.8rem 3.2rem;
+    }
+    .tags .tag-btn2 {
+        font-size: 1.2rem;
+        padding: 0.8rem 3.8rem;
+    }
+
+
+    header .nav-logo {
+        font-size: 1.7rem;
+        margin-left: 2rem;
+    
+    }
+  
+    .action{
+        display: none;
+   
+    }
+   
+
+}
+@media only screen and (min-width: 801px){
+    .mini {
+        display: none;
+    }
+   
+}
