@@ -13,15 +13,13 @@ window.onload = async function loadMovie(){
         
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
-        // movieImage.setAttribute("src"="http://127.0.0.1:5500/articledetail.html/", onclick="getMovieDetail(movie)")
-        // movieImage.onclick=function(){getMovieDetail(movie);}
+
 
         newMovie.onclick=function() {
             location.href = `articledetail.html?${movie.id}`
         }
 
         newMovie.innerText = movie.title
-
         newMovie.appendChild(movieImage)
         movie_list.appendChild(newMovie)
     });
