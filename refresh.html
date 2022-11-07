@@ -28,7 +28,7 @@
             <div class="mobile-menu">메뉴</div>
             <ul class="menu-list">
                 <li>
-                    <a href="#">홈</a>
+                    <a href="http://127.0.0.1:5500/refresh.html">홈</a>
                 </li>
                 <li>
                     <a href="#">시리즈</a>
@@ -47,12 +47,12 @@
         <div class="right">
             <div class="icon search">
                 <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="제목, 사람, 장르"/>
+                    <input id="search" type="text" placeholder="제목, 내용, 장르"/>
+                    <i style="cursor: pointer;" class="fa-solid fa-magnifying-glass" onclick="searchButton()"></i>
                 </div>
             </div>
             <div class="icon kids">
-                <a href="#">키즈</a>
+                <a style="cursor: pointer;" onclick="handleLogout()">로그아웃</a>
             </div>
             <div class="icon bell">
                 <a href="#"><i class="fa-solid fa-bell"></i></a>
