@@ -4,18 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style/article.css">
     <title>게시글상세보기</title>
 </head>
 <body>
-    <h1>게시글상세보기 페이지</h1>
-    <ol id="article"></ol>
+    <div class="bg">
+    <section>
+    <center>
+    <div class="main_pic">
+        <div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div style="width: 10px;"></div>
+            <div style="width: 10px;">게시글</div>
+            <button onclick="history.back()">뒤로가기</div>
+        </div>
+    <!-- <h1 class="main_titile">게시글상세보기 페이지</h1> -->
+    <div class="detail_pic"><ol id="article"></ol></div>
+
     <br>
-    <ol id ="comment"></ol>
+    
+
     <form>
         <input type="text" name="content" id="content" placeholder="리뷰내용" />
         <input type="text" name="rating" id="rating" placeholder="평점" />
-        <button id="btn_submit" type="button">제출</button>
+        <button onclick="" id="btn_submit" type="button">제출</button>
     </form>
+
+    <ol class="comment_box" id="comment_list"></ol>
+</div>
+    
+</center>
+
+</section>
+</div>
     <script src="js/api.js"></script>
     <script src="js/articledetail.js"></script>
 </body>
