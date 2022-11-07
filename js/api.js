@@ -183,4 +183,16 @@ async function getMovieRecommend(movie_id){
 
     response_json = await response.json()
     return response_json
+
+}
+
+
+async function getMovieMainImage(id){
+    const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+
 }
