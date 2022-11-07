@@ -107,6 +107,7 @@ window.onload = async function loadMovieRecommend(){
         category_two_list.appendChild(newMovie)
     });
     
+
 }
 }
 function mainMovieButton () {
@@ -114,4 +115,5 @@ function mainMovieButton () {
     const id = result[1]
 
     location.href = `articledetail.html?${id}`
+
 }
