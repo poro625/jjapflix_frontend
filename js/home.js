@@ -1,9 +1,15 @@
 
-TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
+window.onload = async function loadMovieRecommend(){
+    let User_payload = JSON.parse(localStorage.getItem('payload'))
+    if (User_payload === undefined ||  User_payload === null){
 
-window.onload = async function loadMovie(){
+        alert("홈페이지는 로그인 후 사용하실 수 있습니다.");
+        location.href="http://127.0.0.1:5500/login.html";
+    } else {
+    const movie_id = location.search.replace("?", "")
 
-    movies = await getMovie()
+    movies = await getMovieRecommend(movie_id)
+
     const movie_list = document.getElementById("movies")
 
     movies.forEach(movie =>{
