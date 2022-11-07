@@ -39,7 +39,10 @@
             <div class="icon search">
                 <div class="search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="제목, 사람, 장르"/>
+                    <form>
+                        <input type="text" id="search" placeholder="Type to Search">
+                        <button type="button" onclick="searchButton()">검색</button>
+                    </form> 
                 </div>
             </div>
             <div class="icon kids">
@@ -121,11 +124,6 @@
         </div>
     </footer>
 
-    <h1>홈페이지</h1>
-    <form>
-    <input type="text" id="search" placeholder="Type to Search">
-    <button type="button" onclick="searchButton()">검색</button>
-    </form> 
     <script src="js/api.js"></script>
     <script src="js/home.js"></script>
 

@@ -60,11 +60,10 @@ window.onload = async function loadMovieRecommend(){
     });
     
 }
-
+}
 function mainMovieButton () {
     const result = location.search.replace("?movie=", "").replace("id=","").split("&")
     const id = result[1]
 
     location.href = `articledetail.html?${id}`
-}
 }
