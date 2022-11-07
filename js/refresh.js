@@ -1,10 +1,5 @@
-
-
-
-window.onload = async function loadMovieRecommend(){
-    const movie_id = location.search.replace("?", "")
-
-    movies = await getMovieRecommend(movie_id)
+window.onload = async function loadMovieRefresh(){
+    movies = await getMovieRefresh()
     const movie_list = document.getElementById("movies")
 
     movies.forEach(movie =>{
@@ -18,7 +13,7 @@ window.onload = async function loadMovieRecommend(){
         // movieImage.onclick=function(){getMovieDetail(movie);}
 
         newMovie.onclick=function() {
-            location.href = `articledetail.html?${movie.id}`
+            location.href = `home.html?${movie.movie_id}`
         }
 
         newMovie.innerText = movie.title
