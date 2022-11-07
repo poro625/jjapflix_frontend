@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 </head>
 <body>
     <nav>
         <div class="left">
             <div class="logo">
-                <a href="#"><img src="" alt=""></a>
+                <a href="#"><img src="./img/logo.png" alt=""></a>
             </div>
             <div class="mobile-menu">메뉴</div>
             <ul class="menu-list">
@@ -28,7 +29,7 @@
                     <a href="#">영화</a>
                 </li>
                 <li>
-                    <a onclick="location.replace('refresh.html')">콘텐츠 고르기</a>
+                    <a href="#">NEW! 요즘 대세 콘텐츠</a>
                 </li>
                 <li>
                     <a href="#">내가 찜한 콘텐츠</a>
@@ -36,18 +37,14 @@
             </ul>
         </div>
         <div class="right">
-            <form>
-                <div class="icon search">
-                    <div class="search-bar">
-                        
-                        <input id="search" type="text" placeholder="제목, 내용, 장르"/>
-                        <i style="cursor: pointer;" class="fa-solid fa-magnifying-glass" onclick="searchButton()"></i>
-                    </div>
+            <div class="icon search">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="제목, 사람, 장르"/>
                 </div>
-            </form>
+            </div>
             <div class="icon kids">
-                <a style="cursor: pointer;" onclick="handleLogout()">로그아웃</a>
-                <a style="cursor: pointer;" onclick="handleDelete()">회원탈퇴</a>
+                <a href="#">키즈</a>
             </div>
             <div class="icon bell">
                 <a href="#"><i class="fa-solid fa-bell"></i></a>
@@ -60,43 +57,16 @@
             </div>
         </div>
     </nav>
-    <main>
-        <div class="mainimage" id="mainimage">
-        </div>
-        <div class="description">
-            <div id="mainmovieinfo">
-            </div>
-            <div class="buttons">
-                <button class="play" onclick="alert('영상은 넷플릭스 고고')"><i class="fa-solid fa-play"></i><span>재생</span></button>
-                <button class="detail" onclick="mainMovieButton()"><i class="fa-solid fa-circle-info"></i>상세 정보</button>
-            </div>
-        </div>
-        <div class="age-info">
-            <i class="fa-solid fa-rotate-right"></i>
-            <div class="age">15+</div>
-        </div>
-    </main>
     <section>
         <div class="content-list">
-            <h1>관심있는 콘텐츠</h1>
+            <h1> 콘텐츠</h1>
             <div class="slider" id="movies">
             </div>
             <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
             <div class="next"><i class="fa-solid fa-angle-right"></i></div>
         </div>
-        <div class="content-list">
-            <h1>인기있는 콘텐츠</h1>
-            <div class="slider" id="category_1">
-            </div>
-            <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
-            <div class="next"><i class="fa-solid fa-angle-right"></i></div>
-        </div>
-        <div class="content-list">
-            <h1>재미있는 콘텐츠</h1>
-            <div class="slider" id="category_2">
-            </div>
-            <div class="prev"><i class="fa-solid fa-angle-right prev-arrow"></i></div>
-            <div class="next"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="age-info">
+            <i class="fa-solid fa-rotate-right"><button>새로고침</button></i>
         </div>
     </section>
     <footer>
@@ -124,9 +94,7 @@
             </div>
         </div>
     </footer>
-
     <script src="js/api.js"></script>
-    <script src="js/home.js"></script>
-
+    <script src="js/search.js"></script>
 </body>
 </html>
