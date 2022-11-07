@@ -1,6 +1,13 @@
 
-
 window.onload = async function loadArticle(){
+    let User_payload = JSON.parse(localStorage.getItem('payload'))
+    if (User_payload === undefined ||  User_payload === null){
+        location.href="http://127.0.0.1:5500/login.html";
+        
+        
+    } else {
+    
+
     console.log(location);
     //가공
     const movie_id = location.search.replace("?", "")
@@ -33,7 +40,9 @@ window.onload = async function loadArticle(){
         const newRating = document.createElement("div");
         const newButton = document.createElement("button");
         newButton.innerText = "삭제"
-        newButton.onclick=function(){MovieCommentDelete(comment, movie_id);}
+
+        newButton.onclick=function(){MovieCommentDelete(comment,movie_id);}
+
         newContent.innerText = comment.content
         newRating.innerText = comment.rating
         articles_ht.appendChild(newContent)
@@ -52,4 +61,4 @@ window.onload = async function loadArticle(){
 
     
 
-
+}

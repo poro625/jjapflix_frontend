@@ -73,7 +73,7 @@ async function handleLogin() {
         localStorage.setItem("payload", jsonPayload);
 
         alert("로그인 성공!")
-            window.location.replace(`${frontEndBaseUrl}/home.html`);
+            window.location.replace(`${frontEndBaseUrl}/refresh.html`);
 
     }else {
         //로그인 실패시
@@ -121,7 +121,6 @@ async function getMovieDetail(movie_id){
     const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
     })
-    //window.location.replace(`${frontEndBaseUrl}/articledetail.html/`);
     response_json = await response.json()
     return response_json
 }
@@ -149,7 +148,9 @@ async function handlePost(movie_id) {
 }
 
 
-async function MovieCommentDelete(comment, movie_id) {
+
+async function MovieCommentDelete(comment,movie_id) {
+
 
     const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/${comment.id}/`, {
         headers: {
@@ -182,4 +183,39 @@ async function getMovieRecommend(movie_id){
 
     response_json = await response.json()
     return response_json
+
+
+}
+
+
+async function getMovieMainImage(id){
+    const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+
+
+}
+
+//검색함수
+async function searchButton(){
+    const search_id = document.getElementById("search").value
+    
+    location.href = `search.html?${search_id}`
+    
+}
+
+
+async function getMovieSearch(search_id){
+    const response = await fetch(`${backEndBaseUrl}/articles/search/?search=${search_id}`,{
+        method:'GET',
+    })
+    
+
+    response_json = await response.json()
+    return response_json
+    
+
 }
