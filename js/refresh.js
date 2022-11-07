@@ -32,4 +32,4 @@ window.onload = async function loadMovieRefresh(){
         movie_list.appendChild(newMovie)
     });
 }
-
+}
