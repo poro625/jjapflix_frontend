@@ -49,6 +49,7 @@ window.onload = async function loadMovieRecommend(){
 
         const movieImage = document.createElement("img")
 
+
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
 
 
@@ -68,4 +69,4 @@ function mainMovieButton () {
 
     location.href = `articledetail.html?${id}`
 }
-}
+

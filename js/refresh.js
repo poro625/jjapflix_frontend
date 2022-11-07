@@ -1,7 +1,8 @@
 window.onload = async function loadMovieRefresh(){
 
     let User_payload = JSON.parse(localStorage.getItem('payload'))
-    if (User_payload === undefined ||  User_payload === null){
+    		if (User_payload === undefined ||  User_payload === null){
+
 
         alert("홈페이지는 로그인 후 사용하실 수 있습니다.");
         location.href="http://127.0.0.1:5500/login.html";
@@ -9,6 +10,7 @@ window.onload = async function loadMovieRefresh(){
         
     } else {
     
+
 
     movies = await getMovieRefresh()
     const movie_list = document.getElementById("movies")
