@@ -1,4 +1,4 @@
-TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
+
 
 window.onload = async function loadArticle(){
     console.log(location);
@@ -8,6 +8,7 @@ window.onload = async function loadArticle(){
     articles = await getMovieDetail(movie_id)
     //console.log(articles)
     articles_ht = document.getElementById("article")
+
 
     const ImageMovie = document.createElement("div");
     const movieImage = document.createElement("img")
@@ -20,6 +21,7 @@ window.onload = async function loadArticle(){
     newTitle.innerText = articles.title
     newRating.innerText = articles.rating
     
+
     ImageMovie.appendChild(movieImage)
     articles_ht.appendChild(ImageMovie)
     articles_ht.appendChild(newRating)
@@ -31,19 +33,20 @@ window.onload = async function loadArticle(){
         const newRating = document.createElement("div");
         const newButton = document.createElement("button");
         newButton.innerText = "삭제"
-        newButton.onclick=function(){MovieCommentDelete(comment);}
+        newButton.onclick=function(){MovieCommentDelete(comment, movie_id);}
         newContent.innerText = comment.content
         newRating.innerText = comment.rating
         articles_ht.appendChild(newContent)
         articles_ht.appendChild(newRating)
         articles_ht.appendChild(newButton)
-        
+
         });
 
         const btnSubmit = document.getElementById("btn_submit");
         btnSubmit.onclick=function() {
             handlePost(movie_id);
         };
+
     
     };
 

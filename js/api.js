@@ -1,5 +1,6 @@
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
+const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 
 window.onload = () => {
     console.log('로딩되었음')
@@ -26,7 +27,7 @@ async function handleSignup() {
     })
 
     const response_json = await response.json()
-    
+
     console.log(response)
     if (response.status == 201){
         alert(response_json["detail"])
@@ -43,6 +44,7 @@ async function handleLogin() {
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
     console.log(email, password)
+
 
     const response = await fetch('http://127.0.0.1:8000/users/dj-rest-auth/login/', {
         headers: {
@@ -115,7 +117,6 @@ async function getMovie(){
 }
 
 
-
 async function getMovieDetail(movie_id){
     const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
@@ -148,9 +149,9 @@ async function handlePost(movie_id) {
 }
 
 
-async function MovieCommentDelete(comment) {
+async function MovieCommentDelete(comment, movie_id) {
 
-    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/${comment.id}/`, {
+    const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/${comment.id}/`, {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")
@@ -161,4 +162,24 @@ async function MovieCommentDelete(comment) {
         alert("리뷰가 삭제되었습니다!")
         window.location.reload();
     }
+}
+
+
+
+async function getMovieRefresh(){
+    const response = await fetch(`${backEndBaseUrl}/recommend/refresh/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+}
+
+async function getMovieRecommend(movie_id){
+    const response = await fetch(`${backEndBaseUrl}/recommend/${movie_id}/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
 }
