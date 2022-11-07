@@ -1,5 +1,4 @@
 
-TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 
 window.onload = async function loadLoginValidation(){
     let User_payload = JSON.parse(localStorage.getItem('payload'))
@@ -15,16 +14,19 @@ window.onload = async function loadLoginValidation(){
 }
 
 
-window.onload = async function loadMovie(){
-    
-    movies = await getMovie()
+
+window.onload = async function loadMovieRecommend(){
+    const movie_id = location.search.replace("?", "")
+
+    movies = await getMovieRecommend(movie_id)
+
     const movie_list = document.getElementById("movies")
 
     movies.forEach(movie =>{
         const newMovie = document.createElement("div");
 
         const movieImage = document.createElement("img")
-        
+        console.log(movie)
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
 
