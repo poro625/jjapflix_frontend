@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kong flix</title>
+    <title>짭플릭스</title>
+
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/home.css">
@@ -37,13 +38,14 @@
             </ul>
         </div>
         <div class="right">
-            <div class="icon search">
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <form>
-                        <input type="text" id="search" placeholder="Type to Search">
-                        <button type="button" onclick="searchButton()">검색</button>
-                    </form> 
+              <form>
+                <div class="icon search">
+                    <div class="search-bar">
+                        <input id="search" type="text" placeholder="제목, 내용, 장르"/>
+                        <i style="cursor: pointer;" class="fa-solid fa-magnifying-glass" onclick="searchButton()"></i>
+                    </div>
+                </div>
+            </form>
                 </div>
             </div>
             <div class="icon kids">
