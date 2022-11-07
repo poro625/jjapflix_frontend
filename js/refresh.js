@@ -1,4 +1,5 @@
 window.onload = async function loadMovieRefresh(){
+
     let User_payload = JSON.parse(localStorage.getItem('payload'))
     if (User_payload === undefined ||  User_payload === null){
 
@@ -8,7 +9,7 @@ window.onload = async function loadMovieRefresh(){
         
     } else {
     
-    
+
     movies = await getMovieRefresh()
     const movie_list = document.getElementById("movies")
 
@@ -20,15 +21,15 @@ window.onload = async function loadMovieRefresh(){
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
 
+        // movieImage.setAttribute("src"="http://127.0.0.1:5500/articledetail.html/", onclick="getMovieDetail(movie)")
+        // movieImage.onclick=function(){getMovieDetail(movie);}
 
         newMovie.onclick=function() {
-            location.href = `home.html?${movie.movie_id}`
+            location.href = `home.html?movie=${movie.movie_id}&id=${movie.id}`
         }
-
-        newMovie.innerText = movie.title
 
         newMovie.appendChild(movieImage)
         movie_list.appendChild(newMovie)
     });
 }
-}
+
