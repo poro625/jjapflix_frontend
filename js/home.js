@@ -9,24 +9,19 @@ window.onload = async function loadMovie(){
     movies.forEach(movie =>{
         const newMovie = document.createElement("div");
 
-        const movieImage = document.createElement("img");
-        newMovie.classList.add("movie_main_list")
+        const movieImage = document.createElement("img")
+        
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
-        // movieImage.setAttribute("src"="http://127.0.0.1:5500/articledetail.html/", onclick="getMovieDetail(movie)")
-        // movieImage.onclick=function(){getMovieDetail(movie);}
+
 
         newMovie.onclick=function() {
             location.href = `articledetail.html?${movie.id}`
         }
 
         newMovie.innerText = movie.title
-
-
-
         newMovie.appendChild(movieImage)
         movie_list.appendChild(newMovie)
-
     });
 }
 

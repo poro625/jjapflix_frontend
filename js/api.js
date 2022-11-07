@@ -1,6 +1,6 @@
-const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
+
 window.onload = () => {
     console.log('로딩되었음')
 }
@@ -70,6 +70,7 @@ async function handleLogin() {
         }).join(''));
 
         localStorage.setItem("payload", jsonPayload);
+
         alert("로그인 성공!")
             window.location.replace(`${frontEndBaseUrl}/home.html`);
 
@@ -79,6 +80,7 @@ async function handleLogin() {
         // window.location.reload();
     }
 }
+
 
 async function handleLogout(){
     localStorage.removeItem("access")
@@ -113,14 +115,15 @@ async function getMovie(){
     return response_json
 }
 
+
 async function getMovieDetail(movie_id){
     const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
     })
-    //window.location.replace(`${frontEndBaseUrl}/articledetail.html/`);
     response_json = await response.json()
     return response_json
 }
+
 
 async function handlePost(movie_id) {
     const content = document.getElementById("content").value
@@ -143,9 +146,10 @@ async function handlePost(movie_id) {
     }
 }
 
-async function MovieCommentDelete(comment) {
 
-    const response = await fetch(`http://127.0.0.1:8000/articles/1/comment/${comment.id}/`, {
+async function MovieCommentDelete(comment,movie_id) {
+
+    const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/${comment.id}/`, {
         headers: {
             'content-type': 'application/json',
             "Authorization":"Bearer " + localStorage.getItem("access")

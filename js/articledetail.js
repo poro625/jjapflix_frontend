@@ -29,12 +29,11 @@ window.onload = async function loadArticle(){
 
     articles.movie_comment.forEach(comment => {
 
-
         const newContent = document.createElement("div");
         const newRating = document.createElement("div");
         const newButton = document.createElement("button");
         newButton.innerText = "삭제"
-        newButton.onclick=function(){MovieCommentDelete(comment);}
+        newButton.onclick=function(){MovieCommentDelete(comment,movie_id);}
         newContent.innerText = comment.content
         newRating.innerText = comment.rating
         articles_ht.appendChild(newContent)
