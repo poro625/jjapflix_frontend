@@ -121,7 +121,6 @@ async function getMovieDetail(movie_id){
     const response = await fetch(`${backEndBaseUrl}/articles/${movie_id}`,{
         method:'GET',
     })
-    //window.location.replace(`${frontEndBaseUrl}/articledetail.html/`);
     response_json = await response.json()
     return response_json
 }
@@ -149,7 +148,9 @@ async function handlePost(movie_id) {
 }
 
 
-async function MovieCommentDelete(comment, movie_id) {
+
+async function MovieCommentDelete(comment,movie_id) {
+
 
     const response = await fetch(`http://127.0.0.1:8000/articles/${movie_id}/comment/${comment.id}/`, {
         headers: {
