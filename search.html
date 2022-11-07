@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색결과창</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJapFlix</title>
+    <style>
+        * {
+            background-color: black;
+            color: white;
+            
+        }
+
+        #movies {
+            margin: 10px;
+        }
+
+        .movie_main_list {
+            margin: 0 10px 0 10px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>검색 결과페이지</h1>
+    <form>
+        <input type="text" id="search" placeholder="Type to Search">
+        <button type="button" onclick="searchButton()">검색</button>
+    </form> 
+
+    <div id="movies" style="display: flex; flex-direction: row;"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
+    
+</body>
+</html>
