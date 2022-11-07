@@ -33,10 +33,11 @@
     </style>
 </head>
 <body>
-    <h1>검색페이지</h1>
-    <input onclick="searchButton()" type="text" id="search" placeholder="Type to Search">
-    <button type="button" onclick="handleLogout()"> 로그아웃 </button>
-    <button type="button" onclick="handleDelete()"> 회원탈퇴 </button>
+    <h1>검색 결과페이지</h1>
+    <form>
+        <input type="text" id="search" placeholder="Type to Search">
+        <button type="button" onclick="searchButton()">검색</button>
+    </form> 
 
     <div id="movies" style="display: flex; flex-direction: row;"></div>
 

@@ -30,10 +30,3 @@ window.onload = async function loadMovieRecommend(){
     });
 }
 }
-
-function searchButton(){
-    const search_id = document.getElementById("search").value
-    console.log(search)
-    location.href = `search.html?${search_id}`
-    
-}

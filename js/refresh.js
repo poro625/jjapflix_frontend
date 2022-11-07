@@ -13,11 +13,9 @@ window.onload = async function loadMovieRefresh(){
         const newMovie = document.createElement("div");
 
         const movieImage = document.createElement("img")
-        console.log(movie)
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
-        // movieImage.setAttribute("src"="http://127.0.0.1:5500/articledetail.html/", onclick="getMovieDetail(movie)")
-        // movieImage.onclick=function(){getMovieDetail(movie);}
+
 
         newMovie.onclick=function() {
             location.href = `home.html?${movie.movie_id}`

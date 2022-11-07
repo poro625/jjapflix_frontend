@@ -7,7 +7,6 @@ window.onload = async function loadMovieRecommend(){
     const search_id = location.search.replace("?", "")
 
     movies = await getMovieSearch(search_id)
-    console.log(movies)
 
     const movie_list = document.getElementById("movies")
 
