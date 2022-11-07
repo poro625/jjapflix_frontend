@@ -184,6 +184,7 @@ async function getMovieRecommend(movie_id){
     response_json = await response.json()
     return response_json
 
+
 }
 
 
@@ -194,5 +195,27 @@ async function getMovieMainImage(id){
 
     response_json = await response.json()
     return response_json
+
+
+}
+
+//검색함수
+async function searchButton(){
+    const search_id = document.getElementById("search").value
+    
+    location.href = `search.html?${search_id}`
+    
+}
+
+
+async function getMovieSearch(search_id){
+    const response = await fetch(`${backEndBaseUrl}/articles/search/?search=${search_id}`,{
+        method:'GET',
+    })
+    
+
+    response_json = await response.json()
+    return response_json
+    
 
 }
