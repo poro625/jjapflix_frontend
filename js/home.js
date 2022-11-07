@@ -1,5 +1,14 @@
 
 window.onload = async function loadMovieRecommend(){
+
+    let User_payload = JSON.parse(localStorage.getItem('payload'))
+    if (User_payload === undefined ||  User_payload === null){
+
+
+        alert("홈페이지는 로그인 후 사용하실 수 있습니다.");
+        location.href="http://127.0.0.1:5500/login.html";
+    } else {
+
     const result = location.search.replace("?movie=", "").replace("id=","").split("&")
     const movie_id = result[0]
     const id = result[1]
@@ -39,11 +48,9 @@ window.onload = async function loadMovieRecommend(){
         newMovie.classList.add("item");
 
         const movieImage = document.createElement("img")
-        // console.log(movie)
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
-        // movieImage.setAttribute("src"="http://127.0.0.1:5500/articledetail.html/", onclick="getMovieDetail(movie)")
-        // movieImage.onclick=function(){getMovieDetail(movie);}
+
 
         newMovie.onclick=function() {
             location.href = `articledetail.html?${movie.id}`
@@ -61,4 +68,4 @@ function mainMovieButton () {
 
     location.href = `articledetail.html?${id}`
 }
-
+}
