@@ -1,13 +1,13 @@
-
 window.onload = async function loadMovieRecommend(){
     let User_payload = JSON.parse(localStorage.getItem('payload'))
     if (User_payload === undefined ||  User_payload === null){
 
         location.href="http://127.0.0.1:5500/login.html";
     } else {
-    const movie_id = location.search.replace("?", "")
+    const search_id = location.search.replace("?", "")
 
-    movies = await getMovieRecommend(movie_id)
+    movies = await getMovieSearch(search_id)
+    console.log(movies)
 
     const movie_list = document.getElementById("movies")
 
@@ -24,16 +24,8 @@ window.onload = async function loadMovieRecommend(){
             location.href = `articledetail.html?${movie.id}`
         }
 
-        newMovie.innerText = movie.title
         newMovie.appendChild(movieImage)
         movie_list.appendChild(newMovie)
     });
 }
-}
-
-function searchButton(){
-    const search_id = document.getElementById("search").value
-    console.log(search)
-    location.href = `search.html?${search_id}`
-    
 }

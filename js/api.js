@@ -184,3 +184,17 @@ async function getMovieRecommend(movie_id){
     response_json = await response.json()
     return response_json
 }
+
+async function getMovieSearch(search_id){
+    console.log(search_id)
+    const response = await fetch(`${backEndBaseUrl}/articles/search/?search=${search_id}`,{
+        method:'GET',
+    })
+    
+
+    response_json = await response.json()
+    console.log(response_json)
+    return response_json
+    
+
+}
