@@ -16,7 +16,7 @@ window.onload = async function loadMovieRecommend(){
         const newMovie = document.createElement("div");
 
         const movieImage = document.createElement("img")
-        console.log(movie)
+        
 
         movieImage.setAttribute("src", `${TmdbApiImageUrl}${movie.image}`)
 
@@ -30,4 +30,4 @@ window.onload = async function loadMovieRecommend(){
         movie_list.appendChild(newMovie)
     });
 }
-}
+

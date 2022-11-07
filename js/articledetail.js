@@ -4,11 +4,10 @@ window.onload = async function loadArticle(){
 
         alert("홈페이지는 로그인 후 사용하실 수 있습니다.");
         location.href="http://127.0.0.1:5500/login.html";
-                
-    			
-    		} else {
-    		
-}
+        
+        
+    } else {
+    
 
     console.log(location);
     //가공
@@ -63,4 +62,4 @@ window.onload = async function loadArticle(){
 
     
 
-
+}
