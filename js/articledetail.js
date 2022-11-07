@@ -33,7 +33,9 @@ window.onload = async function loadArticle(){
         const newRating = document.createElement("div");
         const newButton = document.createElement("button");
         newButton.innerText = "삭제"
-        newButton.onclick=function(){MovieCommentDelete(comment, movie_id);}
+
+        newButton.onclick=function(){MovieCommentDelete(comment,movie_id);}
+
         newContent.innerText = comment.content
         newRating.innerText = comment.rating
         articles_ht.appendChild(newContent)
