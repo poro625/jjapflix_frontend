@@ -13,10 +13,8 @@ window.onload = async function loadMovieRefresh(){
         // movieImage.onclick=function(){getMovieDetail(movie);}
 
         newMovie.onclick=function() {
-            location.href = `home.html?${movie.movie_id}`
+            location.href = `home.html?movie=${movie.movie_id}&id=${movie.id}`
         }
-
-        newMovie.innerText = movie.title
 
         newMovie.appendChild(movieImage)
         movie_list.appendChild(newMovie)
