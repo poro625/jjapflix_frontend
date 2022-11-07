@@ -36,7 +36,6 @@ async function handleSignup() {
     }else {
         alert(response_json["email"])
         alert(response_json["password1"])
-        alert(response_json["password2"])
 
     }
 }
