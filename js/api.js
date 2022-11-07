@@ -1,5 +1,6 @@
 const frontEndBaseUrl = "http://127.0.0.1:5500"
 const backEndBaseUrl = "http://127.0.0.1:8000"
+const TmdbApiImageUrl = "https://www.themoviedb.org/t/p/w220_and_h330_face"
 
 window.onload = () => {
     console.log('로딩되었음')
@@ -161,4 +162,24 @@ async function MovieCommentDelete(comment) {
         alert("리뷰가 삭제되었습니다!")
         window.location.reload();
     }
+}
+
+
+
+async function getMovieRefresh(){
+    const response = await fetch(`${backEndBaseUrl}/recommend/refresh/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
+}
+
+async function getMovieRecommend(movie_id){
+    const response = await fetch(`${backEndBaseUrl}/recommend/${movie_id}/`,{
+        method:'GET',
+    })
+
+    response_json = await response.json()
+    return response_json
 }
